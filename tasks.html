@@ -125,7 +125,6 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-  // We prepend a CORS proxy URL to the XKCD URL to bypass the restriction
   const xkcdApi = "https://corsproxy.io/?https://xkcd.com/info.0.json";
 
   $.getJSON(xkcdApi, function(data) {
