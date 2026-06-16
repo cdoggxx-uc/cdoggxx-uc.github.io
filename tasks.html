@@ -75,29 +75,15 @@
   <div id="digit-clock"></div>
 
   <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-</div>
 
+  <div id="joke"></div>
+</div>
 
 
 
 <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 
-<script>
-  function jQueryAjaxPost() {
-  var input = $("#data").val();
-  if (input.length == 0) return;
-  if (!isValidInput(input)) {
-        $("#response").text("Invalid characters in input.");
-        return;
-    }
-  $.post("echo.php", {data: input},
-    function( result ) {
-      $("#response").text("Response from server:" + result);
-    }
-  );
-  $("#data").val("");
-}
-</script>
+
 
 <script>
   async function guessAge(name){
@@ -113,63 +99,45 @@
   }
 </script>
 
-<script>
-  function jQueryAjaxGET() {
-  var input = $("#data").val();
-  if (input.length == 0) return;
-  if (!isValidInput(input)) {
-          $("#response").text("Invalid characters in input.");
-          return;
-      }
-  var safeInput = encodeURIComponent(input);
-  $.get("echo.php?data="+input,
-    function( result ) {
-      $("#response").text("Response from server:" + result);
-    }
-  );
-  $("#data").val("");
-}
-</script>
 
-
-<script>
   
-    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-      function(result) {
-    console.log("From jokeAPI: " + JSON.stringify(result));
-    $("#response").text("A Programming joke of the day: " + result.joke)
-})
+
+<div id="joke"></div>
+<script>
+  function getjoke(){
+  $.get("https://v2.jokeapi.dev/joke/Any?type=single",
+  function(result) {
+    $("#joke").text("Joke of the minute!: " + result.joke)
+  })  
+  }
+  getjoke();
+  setInterval(getjoke(), 60000);
+  
+  document.getElementById('joke').innerHTML = getjoke();
   
 </script>
 
+<div id="comic-container">
+    <h2 id="comic-title"></h2>
+    <img id="comic-image" src="" alt="Loading comic...">
+    <p id="comic-alt"></p>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-  function getEcho(){
-  var input = document.getElementById("data").value;
-  if (input.length == 0){
-    console.log("Input was empty");
-    return;  
-  }
-  const regex = /^[a-zA-Z0-9\s.,!?]+$/;
-    if (!regex.test(input)) {
-        document.getElementById("response").innerText = "Invalid input.";
-        return;
-    }
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200){
-      console.log("Received data="+xhttp.responseText);
-      document.getElementById("response").innerText="Response from server:" + xhttp.responseText;
-      //code to show the data
-    }
-  }
-  var safeInput = encodeURIComponent(input);
-  xhttp.open("GET", "echo.php?data="+safeInput, true);
-  //code to create an Ajax request
-  xhttp.send();
-  document.getElementById("data").value="";
-}
+  // We prepend a CORS proxy URL to the XKCD URL to bypass the restriction
+  const xkcdApi = "https://corsproxy.io/?https://xkcd.com/info.0.json";
+
+  $.getJSON(xkcdApi, function(data) {
+    $("#comic-title").text(data.title);
+    $("#comic-image").attr("src", data.img);
+    $("#comic-image").attr("alt", data.alt);
+    $("#comic-alt").text(data.alt);
+  }).fail(function() {
+    console.log("Error: Could not load the XKCD comic.");
+  });
 </script>
+
 
 
 <script src="https://waph-phung.github.io/clock.js"></script>
@@ -196,14 +164,6 @@ setInterval(displayTime, 500);
 
 <script src="email.js"></script>
 
-<script>
-
-
-  function isValidInput(input) {
-    const regex = /^[a-zA-Z0-9\s.,!?]+$/;
-    return regex.test(input) && input.length <= 100;
-  }
 
 
 
-</script>
