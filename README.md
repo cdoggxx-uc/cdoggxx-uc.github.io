@@ -39,4 +39,12 @@ For the general requirements task, we had to create and deploy a personal websit
 To meet the non-technical requirements, I used a bootstrap resume template called ["Personal"](https://startbootstrap.com/theme/personal). I then used a tracker provided by google api to track all visits to my page. To do this, I had to include a script at the top of my page, and link it to my google account. \
 
 # Technical requirements
-
+For this task, I included the following: (Click the links for more information)\
+ - [jokeAPI](https://v2.jokeapi.dev/joke/Any)\
+ - [analog clock](https://waph-phung.github.io/clock.js)\
+ - [XKCD API](https://corsproxy.io/?https://xkcd.com/info.0.json)\
+ - [WeatherStack API](https://docs.apilayer.com/weatherstack/docs/api-documentation)\
+ - A digital clock\
+ - show/hide your email functionality\
+ - JavaScript cookies to remember the client\
+ 

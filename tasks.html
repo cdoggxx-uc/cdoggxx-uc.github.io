@@ -32,6 +32,7 @@
 
   gtag('config', 'G-JKKWH4Q2RX');
 </script>
+
 <meta charset="utf-8">
 <title>WAPH-Connor Monaghan Student</title>
 <style>
@@ -68,6 +69,26 @@
   <p>A simple HTML page </p>
   Using the <a href="https://www.w3schools.com/html"> W3Schools template</a>
   <hr>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <script>
+    $.get("http://api.weatherstack.com/current?access_key=ca1ffd0b84695483822e5c0c8ac1d5c0&query=Cincinnati&units=f", function(result) {
+        // Fixed the missing parenthesis on this line
+        console.log(JSON.stringify(result)); 
+        
+        // Extract specific details from the API response
+        const location = result.location.name;
+        const temp = result.current.temperature;
+        const description = result.current.weather_descriptions[0];
+
+        // Format it neatly and display it inside the #response div
+        $("#response").html(`
+            <p><strong>Location:</strong> ${location}</p>
+            <p><strong>Temperature:</strong> ${temp}°f</p>
+            <p><strong>Conditions:</strong> ${description}</p>
+        `);
+    });
+  </script>
+  <div id=response></div>
 </body>
 </html>
 
