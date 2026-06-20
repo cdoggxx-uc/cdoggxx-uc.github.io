@@ -25,7 +25,8 @@ Respository's URL: [https://github.com/cdoggxx-uc/waph-monaghcn.git](https://git
   - [Lab1](https://github.com/cdoggxx-uc/waph-monaghcn/tree/main/labs/lab1): Foundations of the Web
   - [Lab2](https://github.com/cdoggxx-uc/waph-monaghcn/tree/main/labs/lab2): Front-end Web Development
   - [Hackathon 1](https://github.com/cdoggxx-uc/waph-monaghcn/tree/main/labs/Hackathon1): Hackathon 1
-  - [Individual Project 1](https://cdoggxx-uc.github.io): Individual Project 1
+  - [Individual Project 1](https://cdoggxx-uc.github.io): Link to Website
+  - [Individual Project 1](https://github.com/cdoggxx-uc/cdoggxx-uc.github.io.git): Link to Code
 
   
 
