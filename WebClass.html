@@ -50,6 +50,8 @@
   .round {border-radius: 8px;}
   #response{background-color: #ff9800;}/*Orange*/
 </style>
+<script> src="http://api.weatherstack.com/current?access_key=ca1ffd0b84695483822e5c0c8ac1d5c0&query=New York"></script>
+
 </head>
 <body>
 <div id="top">
@@ -92,7 +94,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>-->
 
 <script>
   function jQueryAjaxPost() {
@@ -151,9 +153,24 @@
     console.log("From jokeAPI: " + JSON.stringify(result));
     $("#response").text("A Programming joke of the day: " + result.joke)
 })
+
   
 </script>
+<script>
+  
+    $.get("http://api.weatherstack.com/current?access_key=ca1ffd0b84695483822e5c0c8ac1d5c0&query=New York",
+    function(result) {
+    const location = result.location.name;
+    const temp = result.current.temperature;
+    const description = result.current.weather_descriptions[0];
 
+    $("#response").html(`
+        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Temperature:</strong> ${temp}°C</p>
+        <p><strong>Conditions:</strong> ${description}</p>
+    `);
+  
+</script>
 
 <script>
   function getEcho(){
