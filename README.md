@@ -32,10 +32,15 @@ Respository's URL: [https://github.com/cdoggxx-uc/waph-monaghcn.git](https://git
 # Lab Overview:
 This individual project is a public portfolio designed to showcase my skills and experience to potential employers. In addition to serving as my resume, this repository meets course requirements by including interactive scripts we learned in previous labs.\
 Note: This assignment uses many different HTML pages. The links to each page can be found using the buttons on the home page, or here:\
+
 Homepage: https://cdoggxx-uc.github.io/
-Tasks: https://cdoggxx-uc.github.io/tasks.html
-Resume: https://cdoggxx-uc.github.io/resume.html
-Course Overview: https://cdoggxx-uc.github.io/WebClass.html
+
+Tasks: https://cdoggxx-uc.github.io/tasks.html\
+
+Resume: https://cdoggxx-uc.github.io/resume.html\
+
+Course Overview: https://cdoggxx-uc.github.io/WebClass.html\
+
 
 # General requirements
 For the general requirements task, we had to create and deploy a personal website on github.io that includes our resume, name, headshot, contact info and background. I did this by uploading a bootstrap template to github.io and filling in the information above. To publish the website, I put the code in a github repository named cdoggxx-uc.github.io. Now, I can go to the link and view the website. I added a new button that takes the user to a new HTML page called WebClass.html. This page introduces this course and related hands on projects. \
